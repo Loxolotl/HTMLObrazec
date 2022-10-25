@@ -1,0 +1,41 @@
+div.main{
+    width: 600px;
+    margin: auto;
+    background-color: rgb(255, 247, 231);
+    min-height: 95vh;
+    border-radius: 15px;
+    text-align: center;
+}
+img.logo{
+    margin-top: 12px;
+}
+input:hover{
+    background-color: rgb(255, 252, 247);
+}
+select:hover{
+    background-color: rgb(255, 252, 247);
+}
+select:focus{
+    outline: none;
+}
+input.stan{
+    border-width: 0px 0px 2px 0px;
+    border-color: wheat;
+    height: 26px;
+
+}
+textarea:focus, input:focus{
+    outline: none;
+}
+table {
+    margin: 0 auto; /* or margin: 0 auto 0 auto */
+  }
+#firstname{
+    width: 160px;
+}
+#lastname{
+    width: 160px;
+}
+#email{
+    width: 370px;
+}
