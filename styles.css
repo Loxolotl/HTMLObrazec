@@ -3,7 +3,7 @@ div.main{
     margin: auto;
     background-color: rgb(255, 247, 231);
     min-height: 95vh;
-    border-radius: 14px;
+    border-radius: 15px;
     text-align: center;
 }
 img.logo{
