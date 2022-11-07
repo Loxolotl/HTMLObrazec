@@ -3,6 +3,14 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+  }
 div.main{
     width: 600px;
     margin: auto;
@@ -29,6 +37,12 @@ input.stan{
     height: 26px;
 
 }
+select.country{
+    border-width: 0px 0px 2px 0px;
+    border-color: wheat;
+    height: 30px;
+    background-color: rgb(255, 255, 255);
+}
 textarea:focus, input:focus{
     outline: none;
 }
@@ -36,11 +50,29 @@ table {
     margin: 0 auto; /* or margin: 0 auto 0 auto */
   }
 #firstname{
-    width: 160px;
+    width: 180px;
 }
 #lastname{
-    width: 160px;
+    width: 180px;
 }
 #email{
-    width: 370px;
+    width: 424px;
+}
+#address{
+    width: 424px;
+}
+#country{
+    width: 428px;
+}
+#city{
+    width: 160px;
+}
+#state{
+    width: 120px;
+}
+#post{
+    width: 80px;
+}
+#number{
+    width: 180px;
 }
