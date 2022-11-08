@@ -19,6 +19,42 @@ div.main{
     border-radius: 15px;
     text-align: center;
 }
+
+
+
+
+
+
+
+
+.grid-container{
+    width: 428px;
+    column-width: 143px;
+    margin: auto;
+    display: grid;
+    row-gap: 15px;
+    grid-template-columns: auto auto auto;
+    text-align: left;
+    
+}
+.grid-item4{
+    grid-column: 1 / span 3;
+}
+.grid-item6{
+    grid-column: 1 / span 3;
+}
+.grid-item7{
+    grid-column: 1 / span 3;
+}
+.grid-item3{
+    position: relative;
+}
+
+
+
+
+
+
 img.logo{
     margin-top: 12px;
 }
@@ -35,6 +71,12 @@ input.stan{
     border-width: 0px 0px 2px 0px;
     border-color: wheat;
     height: 26px;
+
+}
+input.phon{
+    border-width: 0px 0px 2px 0px;
+    border-color: wheat;
+    height: 30px;
 
 }
 select.country{
