@@ -1,52 +1,51 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-            <title>Continental Hotel</title>
-            <link rel="stylesheet" href="styles.css">
-            <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-			<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<html>
 
-            <link
-     rel="stylesheet"
-     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
-   />
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<head>
+    <title>Continental Hotel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
 
-        </head>
-        <body>
-            <div class="main">
-                <img src="img/px-logo.svg" class="logo">
-                <hr>
-                <form autocomplete="off">
-                    <div class="grid-container">
-                        <div class="grid-item1">
-                        <input type="text" class="stan" placeholder="First Name" id="firstname" maxlength="22">    
-                        </div>
-                        
-                        <div class="grid-item3">
-                        <input type="text" class="stan" placeholder="Last Name" id="lastname" maxlength="22" >      
-                        </div>
-                          
-                        
-                        
-                    
 
-                        <div class="grid-item4">
-                        <input type="text" class="stan" placeholder="E-mail" id="email">
-                        </div>
-                        
-                    
-                    
-                        <div class="grid-item5">
-                        <input id="phone" type="tel" name="phone" class="phon" />
-                        </div>
-                        
-                        
-                    
-                    
-                    
-                        <div class="grid-item6">
-    	                <select id="country" name="country" class="country" autocomplete="off">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+</head>
+
+<body>
+    <div class="main">
+        <img src="img/px-logo.svg" class="logo">
+        <hr>
+        <form autocomplete="off">
+            <div>
+                <div style="margin: auto; display: flex; width: 428px; margin-top: 15px;">
+                    <div style="flex: 1; text-align: left;">
+                        <input type="text" class="stan" placeholder="First Name" id="firstname" maxlength="22">
+                    </div>
+                    <div style="flex: 1; text-align: right;">
+                        <input type="text" class="stan" placeholder="Last Name" id="lastname" maxlength="22">
+                    </div>
+                </div>
+
+
+
+
+                <div style="margin-top:15px ;">
+                    <input type="text" class="stan" placeholder="E-mail" id="email">
+                </div>
+
+
+                <div style="margin: auto; display: flex; width: 428px; margin-top: 15px;">
+                    <div style="flex: 1; text-align: left;">
+                        <input id="phone" type="tel" name="phone" class="phon" oninput="process()"
+                            style="display: inline;" />
+                    </div>
+                    <div style="flex: 1; text-align: right;">
+                        <select id="country" name="country" class="country" autocomplete="off" style="display: inline;">
                             <option value="null" disabled selected="selected" hidden>Select Country</option>
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Åland Islands</option>
@@ -98,7 +97,7 @@
                             <option value="Colombia">Colombia</option>
                             <option value="Comoros">Comoros</option>
                             <option value="Congo">Congo</option>
-                            <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+                            <option value="The Democratic Republic of Congo">The Democratic Republic of Congo</option>
                             <option value="Cook Islands">Cook Islands</option>
                             <option value="Costa Rica">Costa Rica</option>
                             <option value="Cote D'ivoire">Cote D'ivoire</option>
@@ -150,7 +149,7 @@
                             <option value="Iceland">Iceland</option>
                             <option value="India">India</option>
                             <option value="Indonesia">Indonesia</option>
-                            <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+                            <option value="Iran">Iran, Islamic Republic of</option>
                             <option value="Iraq">Iraq</option>
                             <option value="Ireland">Ireland</option>
                             <option value="Isle of Man">Isle of Man</option>
@@ -163,8 +162,8 @@
                             <option value="Kazakhstan">Kazakhstan</option>
                             <option value="Kenya">Kenya</option>
                             <option value="Kiribati">Kiribati</option>
-                            <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
-                            <option value="Korea, Republic of">Korea, Republic of</option>
+                            <option value="DPR Korea">DPR Korea</option>
+                            <option value="Republic of Korea ">Republic of Korea</option>
                             <option value="Kuwait">Kuwait</option>
                             <option value="Kyrgyzstan">Kyrgyzstan</option>
                             <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
@@ -177,7 +176,7 @@
                             <option value="Lithuania">Lithuania</option>
                             <option value="Luxembourg">Luxembourg</option>
                             <option value="Macao">Macao</option>
-                            <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+                            <option value="Macedonia">Macedonia</option>
                             <option value="Madagascar">Madagascar</option>
                             <option value="Malawi">Malawi</option>
                             <option value="Malaysia">Malaysia</option>
@@ -216,7 +215,7 @@
                             <option value="Oman">Oman</option>
                             <option value="Pakistan">Pakistan</option>
                             <option value="Palau">Palau</option>
-                            <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+                            <option value="Palestinian Territory">Palestinian Territory</option>
                             <option value="Panama">Panama</option>
                             <option value="Papua New Guinea">Papua New Guinea</option>
                             <option value="Paraguay">Paraguay</option>
@@ -250,7 +249,6 @@
                             <option value="Solomon Islands">Solomon Islands</option>
                             <option value="Somalia">Somalia</option>
                             <option value="South Africa">South Africa</option>
-                            <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
                             <option value="Spain">Spain</option>
                             <option value="Sri Lanka">Sri Lanka</option>
                             <option value="Sudan">Sudan</option>
@@ -262,7 +260,7 @@
                             <option value="Syrian Arab Republic">Syrian Arab Republic</option>
                             <option value="Taiwan">Taiwan</option>
                             <option value="Tajikistan">Tajikistan</option>
-                            <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+                            <option value="Tanzania">Tanzaniaf</option>
                             <option value="Thailand">Thailand</option>
                             <option value="Timor-leste">Timor-leste</option>
                             <option value="Togo">Togo</option>
@@ -279,7 +277,8 @@
                             <option value="United Arab Emirates">United Arab Emirates</option>
                             <option value="United Kingdom">United Kingdom</option>
                             <option value="United States">United States</option>
-                            <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+                            <option value="United States Minor Outlying Islands">United States Minor Outlying Islands
+                            </option>
                             <option value="Uruguay">Uruguay</option>
                             <option value="Uzbekistan">Uzbekistan</option>
                             <option value="Vanuatu">Vanuatu</option>
@@ -293,45 +292,69 @@
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
                         </select>
-                        </div>
-                        
-                        
-                            <div class="grid-item7">
-                            <input type="text" class="stan" placeholder="Address" id="address">    
-                            </div>
-                            
-                        
-                            <div class="grid-item8">
-                            <input type="text" class="stan" placeholder="City" id="city">
-                            </div>
-                            <div class="grid-item9">
-                            <input type="number" class="stan" placeholder="Zip Code" id="post">
-                            </div>
-                            <div class="grid-item10">
-                            <input type="text" class="stan" placeholder="State" id="state">
-                            </div>
-                            
+                    </div>
+                </div>
 
-                               
-                            
-                            
-                        
-                    
-                        </div>
-                </form>
-                
+                <div style="margin-top:15px ;">
+                    <input type="text" class="stan" placeholder="Address" id="address">
+                </div>
+
+
+                <div style="display: flex; width: 428px; margin: auto; margin-top: 15px;">
+                    <div style="flex: 1;">
+                        <input type="text" class="stan" placeholder="City" id="city">
+                    </div>
+                    <div style="flex: 1;">
+                        <input type="number" class="stan" placeholder="Zip Code" id="post">
+                    </div>
+                    <div style="flex: 1;">
+                        <input type="text" class="stan" placeholder="State" id="state">
+                    </div>
+
+
+
+
+
+
+                </div>
+
             </div>
+        </form>
+
+    </div>
 
 
 
 
 
-        </body>
-        <script>
-            const phoneInputField = document.querySelector("#phone");
-            const phoneInput = window.intlTelInput(phoneInputField, {
-              utilsScript:
-                "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-            });
-          </script>
-    </html>
+</body>
+<script>
+    const phoneInputField = document.querySelector("#phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+        utilsScript:
+            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+
+    function process(event) {
+        event.preventDefault();
+
+        const phoneNumber = phoneInput.getNumber();
+
+        info.style.display = "none";
+        error.style.display = "none";
+
+        if (phoneInput.isValidNumber()) {
+            const valid = true;
+        } else {
+            const valid = false;
+        }
+    }
+
+
+
+
+
+
+</script>
+
+</html>

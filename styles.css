@@ -104,17 +104,20 @@ table {
     width: 424px;
 }
 #country{
-    width: 428px;
+    width: 240px;
 }
 #city{
     width: 160px;
 }
 #state{
-    width: 120px;
+    width: 128px;
 }
 #post{
-    width: 80px;
+    width: 100px;
 }
 #number{
     width: 180px;
+}
+.phon{
+    width: 182px;
 }
