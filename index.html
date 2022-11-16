@@ -7,8 +7,8 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.2/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="sweetalert2.min.css">
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="jquery-3.6.1.min.js"></script>
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
@@ -317,6 +317,39 @@
 
 
                 </div>
+                <hr style="margin-top: 15px;">
+                <div style="display: flex; width: 428px; margin: auto; margin-top: 15px;">
+                    <div style="flex: 1; text-align: left;">
+                        <input type="date" class="stan" id="signin" name="from">
+                    </div>
+                    <div style="flex: 1; text-align: right;">
+                        <input type="date" class="stan" id="signout" name="to">
+                    </div>
+                </div>
+                <div style="display: flex; width: 428px; margin: auto; margin-top: 15px;">
+                    <div style="flex: 1; text-align: center; background-color: white;">
+                        <label class="container">Standard
+                            <input type="radio">
+                            <span class="checkmark"></span>
+                          </label>
+                          
+                          <label class="container">Executive
+                            <input type="radio">
+                            <span class="checkmark"></span>
+                          </label>
+                          
+                          <label class="container">Delux
+                            <input type="radio">
+                            <span class="checkmark"></span>
+                          </label>
+                          
+                          <label class="container">Royal
+                            <input type="radio">
+                            <span class="checkmark"></span>
+                          </label>
+                    </div>
+                    
+                </div>
 
             </div>
         </form>
@@ -348,6 +381,15 @@
         } else {
             const valid = false;
         }
+    }
+
+    $("input[name='from']").change(function () {
+        $("input[name='to']").val($(this).val());
+    })
+
+    document.getElementById("signin").onchange = function () {
+        var input = document.getElementById("signout");
+        input.setAttribute("min", this.value);
     }
 
 

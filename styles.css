@@ -1,17 +1,20 @@
-body{
+body {
     background-image: url(img/background.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
+
 input[type=number] {
     -moz-appearance: textfield;
-  }
-div.main{
+}
+
+div.main {
     width: 600px;
     margin: auto;
     background-color: rgb(255, 247, 231);
@@ -27,7 +30,7 @@ div.main{
 
 
 
-.grid-container{
+.grid-container {
     width: 428px;
     column-width: 143px;
     margin: auto;
@@ -35,18 +38,22 @@ div.main{
     row-gap: 15px;
     grid-template-columns: auto auto auto;
     text-align: left;
-    
+
 }
-.grid-item4{
+
+.grid-item4 {
     grid-column: 1 / span 3;
 }
-.grid-item6{
+
+.grid-item6 {
     grid-column: 1 / span 3;
 }
-.grid-item7{
+
+.grid-item7 {
     grid-column: 1 / span 3;
 }
-.grid-item3{
+
+.grid-item3 {
     position: relative;
 }
 
@@ -55,69 +62,204 @@ div.main{
 
 
 
-img.logo{
+img.logo {
     margin-top: 12px;
 }
-input:hover{
+
+input:hover {
     background-color: rgb(255, 252, 247);
 }
-select:hover{
+
+select:hover {
     background-color: rgb(255, 252, 247);
 }
-select:focus{
+
+select:focus {
     outline: none;
 }
-input.stan{
+
+input.stan {
     border-width: 0px 0px 2px 0px;
     border-color: wheat;
     height: 26px;
 
 }
-input.phon{
+
+input.phon {
     border-width: 0px 0px 2px 0px;
     border-color: wheat;
     height: 30px;
 
 }
-select.country{
+
+select.country {
     border-width: 0px 0px 2px 0px;
     border-color: wheat;
     height: 30px;
     background-color: rgb(255, 255, 255);
 }
-textarea:focus, input:focus{
+
+textarea:focus,
+input:focus {
     outline: none;
 }
+
 table {
-    margin: 0 auto; /* or margin: 0 auto 0 auto */
-  }
-#firstname{
+    margin: 0 auto;
+    /* or margin: 0 auto 0 auto */
+}
+
+#firstname {
     width: 180px;
 }
-#lastname{
+
+#lastname {
     width: 180px;
 }
-#email{
+
+#email {
     width: 424px;
 }
-#address{
+
+#address {
     width: 424px;
 }
-#country{
+
+#country {
     width: 240px;
 }
-#city{
+
+#city {
     width: 160px;
 }
-#state{
+
+#state {
     width: 128px;
 }
-#post{
+
+#post {
     width: 100px;
 }
-#number{
+
+#number {
     width: 180px;
 }
-.phon{
+
+.phon {
     width: 182px;
 }
+
+#signin {
+    width: 180px;
+}
+
+#signout {
+    width: 180px;
+}
+#roomselect {
+    color: wheat;
+}
+
+
+
+
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #ffffff;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: wheat;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+/* Customize the label (the container) */
+.container {
+    display: inline;
+    position: relative;
+    padding-left: 35px;
+    
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: Arial, Helvetica, sans-serif;
+    
+  }
+  
+  /* Hide the browser's default radio button */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    margin-top: 12px;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: wheat;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }
+
+
+
+
