@@ -2,68 +2,33 @@ body {
     background-image: url(img/background.png);
     background-size: cover;
     background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+button{
+    width: 428px;
+    background-color: white;
+    border-width: 0px 0px 2px 0px;
+    border-color: #f5deb3;
+    height: 32px;
 }
-
-input[type=number] {
-    -moz-appearance: textfield;
-}
-
 div.main {
     width: 600px;
     margin: auto;
-    background-color: rgb(255, 247, 231);
-    min-height: 95vh;
+    background-color: white;
+    height: 920px;
     border-radius: 15px;
     text-align: center;
 }
-
-
-
-
-
-
-
-
-.grid-container {
-    width: 428px;
-    column-width: 143px;
-    margin: auto;
-    display: grid;
-    row-gap: 15px;
-    grid-template-columns: auto auto auto;
-    text-align: left;
-
+div.header{
+    border-radius: 15px 15px 0px;
+    background-color: hsl(40, 100%, 95%);
 }
-
-.grid-item4 {
-    grid-column: 1 / span 3;
-}
-
-.grid-item6 {
-    grid-column: 1 / span 3;
-}
-
-.grid-item7 {
-    grid-column: 1 / span 3;
-}
-
-.grid-item3 {
-    position: relative;
-}
-
-
-
-
 
 
 img.logo {
     margin-top: 12px;
+    width: 428px;
 }
 
 input:hover {
@@ -78,7 +43,7 @@ select:focus {
     outline: none;
 }
 
-input.stan {
+.stan {
     border-width: 0px 0px 2px 0px;
     border-color: wheat;
     height: 26px;
@@ -87,7 +52,7 @@ input.stan {
 
 input.phon {
     border-width: 0px 0px 2px 0px;
-    border-color: wheat;
+    border-color: #f5deb3;
     height: 30px;
 
 }
@@ -139,6 +104,7 @@ table {
 
 #post {
     width: 100px;
+    
 }
 
 #number {
@@ -160,106 +126,69 @@ table {
     color: wheat;
 }
 
-
-
-
-input[type='radio']:after {
-    width: 15px;
-    height: 15px;
-    border-radius: 15px;
-    top: -2px;
-    left: -1px;
-    position: relative;
-    background-color: #ffffff;
-    content: '';
-    display: inline-block;
-    visibility: visible;
-    border: 2px solid white;
+.container{
+    margin-top: 8px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid wheat;
+    border-radius: 50%;
+    margin-left: 12px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
-input[type='radio']:checked:after {
-    width: 15px;
-    height: 15px;
-    border-radius: 15px;
-    top: -2px;
-    left: -1px;
-    position: relative;
+.container .checkmark{
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 50%;
     background-color: wheat;
-    content: '';
-    display: inline-block;
-    visibility: visible;
-    border: 2px solid white;
-}
-
-/* Customize the label (the container) */
-.container {
-    display: inline;
-    position: relative;
-    padding-left: 35px;
-    
-    cursor: pointer;
-    font-size: 14px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    font-family: Arial, Helvetica, sans-serif;
-    
-  }
-  
-  /* Hide the browser's default radio button */
-  .container input {
-    position: absolute;
     opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-  
-  /* Create a custom radio button */
-  .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-    border-radius: 50%;
-    margin-top: 12px;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  .container:hover input ~ .checkmark {
-    background-color: #ccc;
-  }
-  
-  /* When the radio button is checked, add a blue background */
-  .container input:checked ~ .checkmark {
-    background-color: wheat;
-  }
-  
-  /* Create the indicator (the dot/circle - hidden when not checked) */
-  .checkmark:after {
-    content: "";
-    position: absolute;
+    transition: opacity 0.3s ease;
+}
+
+.container input:checked + .checkmark{
+    opacity: 1;
+}
+
+.container input{
     display: none;
-  }
-  
-  /* Show the indicator (dot/circle) when checked */
-  .container input:checked ~ .checkmark:after {
-    display: block;
-  }
-  
-  /* Style the indicator (dot/circle) */
-  .container .checkmark:after {
-    top: 9px;
-    left: 9px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
+}
+
+.labl{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    
+    display: inline-block;
+    
+}
+hr{
+    height: 2px;
+        background-color: wheat;
+        border: none;
+}
+#cont, #cont2, input, select, textarea, button{
+    -webkit-box-shadow:inset 0 0 4px wheat;
+       -moz-box-shadow:inset 0 0 4px wheat;
+            box-shadow:inset 0 0 4px wheat;
+
     background: white;
+    
+}
+
+#people{
+    width: 180px;
+}
+
+#post[type=number] {
+    -moz-appearance: textfield;
   }
 
-
+  #post::-webkit-outer-spin-button,
+  #post::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 

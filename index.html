@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Continental Hotel</title>
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="sweetalert2.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="jquery-3.6.1.min.js"></script>
-
+    <meta charset="utf-8">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
@@ -17,17 +17,24 @@
 </head>
 
 <body>
+
     <div class="main">
-        <img src="img/px-logo.svg" class="logo">
-        <hr>
+        <div class="header">
+            <img src="img/logo.png" class="logo" alt="Logo">
+            <hr>
+        </div>
+
+        <p style="color:  rgb(229, 202, 151);">Personal Information</p>
+
         <form autocomplete="off">
             <div>
                 <div style="margin: auto; display: flex; width: 428px; margin-top: 15px;">
                     <div style="flex: 1; text-align: left;">
-                        <input type="text" class="stan" placeholder="First Name" id="firstname" maxlength="22">
+                        <input type="text" class="stan" placeholder="First Name" id="firstname" maxlength="22" required>
                     </div>
                     <div style="flex: 1; text-align: right;">
-                        <input type="text" class="stan" placeholder="Last Name" id="lastname" maxlength="22">
+                        <input type="text" class="stan" placeholder="Last Name" id="lastname" maxlength="22" required>
+
                     </div>
                 </div>
 
@@ -35,18 +42,19 @@
 
 
                 <div style="margin-top:15px ;">
-                    <input type="text" class="stan" placeholder="E-mail" id="email">
+                    <input type="email" class="stan" placeholder="E-mail" id="email" maxlength="60" required>
                 </div>
 
 
                 <div style="margin: auto; display: flex; width: 428px; margin-top: 15px;">
                     <div style="flex: 1; text-align: left;">
                         <input id="phone" type="tel" name="phone" class="phon" oninput="process()"
-                            style="display: inline;" />
+                            style="display: inline;" required />
                     </div>
                     <div style="flex: 1; text-align: right;">
-                        <select id="country" name="country" class="country" autocomplete="off" style="display: inline;">
-                            <option value="null" disabled selected="selected" hidden>Select Country</option>
+                        <select id="country" name="country" class="country" autocomplete="off" style="display: inline;"
+                            required>
+                            <option value="" disabled selected="selected" hidden>Select Country</option>
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Åland Islands</option>
                             <option value="Albania">Albania</option>
@@ -296,19 +304,22 @@
                 </div>
 
                 <div style="margin-top:15px ;">
-                    <input type="text" class="stan" placeholder="Address" id="address">
+                    <input type="text" class="stan" placeholder="Address" id="address" maxlength="60" required>
                 </div>
 
 
                 <div style="display: flex; width: 428px; margin: auto; margin-top: 15px;">
                     <div style="flex: 1;">
-                        <input type="text" class="stan" placeholder="City" id="city">
+                        <input type="text" class="stan" placeholder="City" id="city" maxlength="22" required>
                     </div>
                     <div style="flex: 1;">
-                        <input type="number" class="stan" placeholder="Zip Code" id="post">
+                        <input type="number" class="stan" placeholder="Zip Code" id="post" max="99999" min="501"
+                            required
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                            maxlength="5">
                     </div>
                     <div style="flex: 1;">
-                        <input type="text" class="stan" placeholder="State" id="state">
+                        <input type="text" class="stan" placeholder="State" id="state" maxlength="17" required>
                     </div>
 
 
@@ -318,38 +329,202 @@
 
                 </div>
                 <hr style="margin-top: 15px;">
+                <p style="color: rgb(229, 202, 151);">Booking Information</p>
                 <div style="display: flex; width: 428px; margin: auto; margin-top: 15px;">
                     <div style="flex: 1; text-align: left;">
-                        <input type="date" class="stan" id="signin" name="from">
+                        <input type="text" class="stan" id="signin" name="from" style="height: 24px;" onfocus="(this. type='date', document.getElementById('signout'). type='date')" placeholder="Check in">
                     </div>
                     <div style="flex: 1; text-align: right;">
-                        <input type="date" class="stan" id="signout" name="to">
+                        <input type="text" class="stan" id="signout" name="to" style="height: 24px;" onfocus="(this. type='date')" placeholder="Check out">
                     </div>
                 </div>
-                <div style="display: flex; width: 428px; margin: auto; margin-top: 15px;">
-                    <div style="flex: 1; text-align: center; background-color: white;">
-                        <label class="container">Standard
-                            <input type="radio">
+                <div style="display: flex; width: 428px; margin: auto; margin-top: 15px; height: 90px;">
+                    <div style="flex: 1; text-align: center; background-color: white; border-bottom:2px solid wheat;"
+                        id="cont">
+                        <p style="color: rgb(229, 202, 151); font-size: 14px;">Room Type</p>
+                        <label class="container">
+                            <input type="radio" name="room" id="room1" checked required>
                             <span class="checkmark"></span>
-                          </label>
-                          
-                          <label class="container">Executive
-                            <input type="radio">
+                        </label>
+                        <label for="room1" class="labl">
+                            Standard
+                        </label>
+                        <label class="container">
+                            <input type="radio" name="room" id="room2">
                             <span class="checkmark"></span>
-                          </label>
-                          
-                          <label class="container">Delux
-                            <input type="radio">
+                        </label>
+                        <label for="room2" class="labl">
+                            Executive
+                        </label>
+                        <label class="container">
+                            <input type="radio" name="room" id="room3">
                             <span class="checkmark"></span>
-                          </label>
-                          
-                          <label class="container">Royal
-                            <input type="radio">
+                        </label>
+                        <label for="room3" class="labl">
+                            Delux
+                        </label>
+                        <label class="container">
+                            <input type="radio" name="room" id="room4">
                             <span class="checkmark"></span>
-                          </label>
+                        </label>
+                        <label for="room4" class="labl">
+                            Royal
+                        </label>
+
                     </div>
-                    
+
+
                 </div>
+                <div style="display: flex; width: 428px; margin: auto; margin-top: 15px; height: 90px;">
+                    <div style="flex: 1; text-align: center; background-color: white; border-bottom:2px solid wheat;"
+                        id="cont2">
+                        <p style="color: rgb(229, 202, 151); font-size: 14px;">Accommodation Type [Optional]</p>
+
+                        <label class="container">
+                            <input type="radio" name="acom" id="acom2">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="acom2" class="labl">
+                            Breakfast
+                        </label>
+                        <label class="container">
+                            <input type="radio" name="acom" id="acom3">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="acom3" class="labl">
+                            Half-board
+                        </label>
+                        <label class="container">
+                            <input type="radio" name="acom" id="acom4">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="acom4" class="labl">
+                            Full-board
+                        </label>
+                        <label class="container">
+                            <input type="radio" name="acom" id="acom5">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="acom5" class="labl">
+                            All inclusive
+                        </label>
+
+                    </div>
+
+
+                </div>
+                <div style="display: flex; width: 428px; margin: auto; margin-top: 15px; height: 40px;">
+                    <div style="flex: 1; text-align: left;">
+                        <input type="number" class="stan" placeholder="Adults" min="1" max="5" id="people" required
+                            value="1">
+                    </div>
+                    <div style="flex: 1; text-align: right;">
+                        <input type="number" class="stan" placeholder="Children" min="0" max="5" id="people" value="0">
+                    </div>
+
+
+                </div>
+                <div
+                    style="display: flex; width: 428px; margin: auto; margin-top: 15px; margin-bottom: 22px; height: 90px;">
+                    <textarea class="stan" style="height: 90px; width: 428px; resize: none; "
+                        placeholder="Additional Requests..."></textarea>
+
+                </div>
+                <hr>
+
+                <div>
+                    <button id="Submit" type="button" onclick="">Rent Room
+                        <script>
+                            var isEmpty = false;
+                            $("#Submit").on('click', function () {
+                                isEmpty = false
+                                $('input[type=text]:required').each(function () {
+                                    if ($(this).val() === '')
+                                        isEmpty = true;
+                                });
+                                $('input[type=email]:required').each(function () {
+                                    if (IsEmail($(this).val()))
+                                        isEmpty = true;
+                                });
+
+                                function IsEmail(email) {
+                                    var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                                    if (!regex.test(email)) {
+                                        return false;
+                                    } else {
+                                        return true;
+                                    }
+                                }
+
+
+                                if (isEmpty)
+                                    NotFull();
+                                else
+                                    AcceptReservation();
+                            });
+                            /*$('#Submit').on("click", function(){
+                                let valid = true;
+                                $('[required]').each(function() {
+                                if ($(this).is(':invalid') || !$(this).val()) valid = false;
+                                    })
+                                if (!valid) NotFull();
+                                else AcceptReservation();
+                                })*/
+                            function AcceptReservation() {
+                                Swal.fire({
+                                    background: "#ffffff",
+                                    font: "Arial",
+                                    title: 'Booking Submitted',
+                                    showClass: {
+                                        popup: 'animate__animated animate__backInUp'
+                                    },
+                                    hideClass: {
+                                        popup: 'animate__animated animate__backOutDown'
+                                    },
+                                    text: 'Payment must be submitted uppon checking in',
+                                    icon: 'success',
+                                    iconColor: "#f5deb3",
+                                    confirmButtonText: 'Confirm',
+                                    confirmButtonColor: "#f5deb3",
+                                    backdrop: `hsla(40, 100%, 95%,0.3) `
+                                })
+                                
+                                    
+                                
+                                
+
+                            }
+                            function NotFull() {
+                                const Toast = Swal.mixin({
+                                    toast: true,
+                                    background: "#ffffff",
+                                    font: "Arial",
+                                    border: "0px 0px 0px 2px #f5deb3",
+                                    position: 'bottom-center',
+                                    iconColor: "#f5deb3",
+                                    showConfirmButton: false,
+                                    timer: 2000,
+                                    timerProgressBar: true,
+                                    didOpen: (toast) => {
+                                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                                    }
+                                })
+
+                                Toast.fire({
+                                    icon: 'warning',
+                                    title: 'Please fill out all required information'
+                                })
+                            }
+                            $("CCButton").click(function () {
+                                $(this).css("grayscale", "0%");
+                            }, function () {
+                                $(this).css("grayscale", "0%");
+                            });
+                        </script>
+                    </button>
+                </div>
+                <br>
 
             </div>
         </form>
@@ -359,44 +534,97 @@
 
 
 
-
-</body>
-<script>
-    const phoneInputField = document.querySelector("#phone");
-    const phoneInput = window.intlTelInput(phoneInputField, {
-        utilsScript:
-            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-    });
-
-    function process(event) {
-        event.preventDefault();
-
-        const phoneNumber = phoneInput.getNumber();
-
-        info.style.display = "none";
-        error.style.display = "none";
-
-        if (phoneInput.isValidNumber()) {
-            const valid = true;
-        } else {
-            const valid = false;
+    <script>
+        const phoneInputField = document.querySelector("#phone");
+        const phoneInput = window.intlTelInput(phoneInputField, {
+            utilsScript:
+                "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        });
+    
+        function process(event) {
+            event.preventDefault();
+    
+            const phoneNumber = phoneInput.getNumber();
+    
+            info.style.display = "none";
+            error.style.display = "none";
+    
+            if (phoneInput.isValidNumber()) {
+                const valid = true;
+            } else {
+                const valid = false;
+            }
         }
-    }
+    
+        $("input[name='from']").change(function () {
+            $("input[name='to']").val($(this).val());
+        })
+    
+        document.getElementById("signin").onchange = function () {
+            var input = document.getElementById("signout");
+            input.setAttribute("min", this.value);
+        }
+    
+    
+        $("#people[type='number']").keypress(function (evt) {
+            evt.preventDefault();
+        });
+    
+    
+        function CreditCard() {
+            Swal.fire({
+                title: "You have selected payment by a card:",
+                html:
+                    '<input id="swal" type="text" maxlength=16 pattern="[0-9]" value="Card Number">&nbsp;&nbsp;' +
+                    '<input id="swal" type="text" maxlength=3 pattern="[0-9]" value="CVV">' +
+                    '<br>' +
+                    '<input id="swal" type="text" maxlength="2" pattern="[0-9]" value="Month of expirey">&nbsp;&nbsp;' +
+                    '<input id="swal" type="text" maxlength="2" pattern="[0-9]" value="Year of expirey">' +
+                    '<br>' +
+                    '<input id="swal" type="text" maxlength="25"  value="Name on Card">&nbsp;&nbsp;' +
+                    '<input id="swal" type="text" maxlength="25"  value="Surname on Card">',
+                icon: 'info',
+                background: "#ffded4",
+                font: "Baskerville",
+                showClass: {
+                    popup: 'animate__animated animate__backInUp'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__backOutDown'
+                },
+                iconColor: "#e39780",
+                confirmButtonText: 'Done',
+                confirmButtonColor: "#e39780",
+                backdrop: `hsla(14, 64%, 70%,0.3) `,
+                showConfirmButton: true,
+                confirmButtonText: 'Comfirm',
+                showCancelButton: true,
+                cancelButtonText: 'Cancel',
+                cancelButtonColor: '#d33'
+    
+            })
+                .then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: "Payment with card succesful",
+                            icon: 'success',
+                            background: "#ffded4",
+                            font: "Baskerville",
+                            iconColor: "#e39780",
+                            confirmButtonText: 'Done',
+                            confirmButtonColor: "#e39780",
+                            backdrop: `hsla(14, 64%, 70%,0.3) `
+                        })
+                        document.getElementById("Cash").style.display = "none";
+                        document.getElementById("PayPal").style.display = "none";
+                        document.getElementById("CCButton").style.filter = "grayscale(0%)";
+                    }
+                })
+        }
+    
+    
+    </script>
+</body>
 
-    $("input[name='from']").change(function () {
-        $("input[name='to']").val($(this).val());
-    })
-
-    document.getElementById("signin").onchange = function () {
-        var input = document.getElementById("signout");
-        input.setAttribute("min", this.value);
-    }
-
-
-
-
-
-
-</script>
 
 </html>
