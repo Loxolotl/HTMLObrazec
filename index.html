@@ -53,7 +53,7 @@
                     </div>
                     <div style="flex: 1; text-align: right;">
                         <select id="country" name="country" class="country" autocomplete="off" style="display: inline;"
-                            required>
+                            required s>
                             <option value="" disabled selected="selected" hidden>Select Country</option>
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Åland Islands</option>
@@ -332,10 +332,13 @@
                 <p style="color: rgb(229, 202, 151);">Booking Information</p>
                 <div style="display: flex; width: 428px; margin: auto; margin-top: 15px;">
                     <div style="flex: 1; text-align: left;">
-                        <input type="text" class="stan" id="signin" name="from" style="height: 24px;" onfocus="(this. type='date', document.getElementById('signout'). type='date')" placeholder="Check in">
+                        <input type="text" class="stan" id="signin" name="from" style="height: 24px;"
+                            onfocus="(this. type='date', document.getElementById('signout'). type='date')"
+                            placeholder="Check in" required>
                     </div>
                     <div style="flex: 1; text-align: right;">
-                        <input type="text" class="stan" id="signout" name="to" style="height: 24px;" onfocus="(this. type='date')" placeholder="Check out">
+                        <input type="text" class="stan" id="signout" name="to" style="height: 24px;"
+                            onfocus="(this. type='date')" placeholder="Check out" required>
                     </div>
                 </div>
                 <div style="display: flex; width: 428px; margin: auto; margin-top: 15px; height: 90px;">
@@ -436,6 +439,7 @@
                     <button id="Submit" type="button" onclick="">Rent Room
                         <script>
                             var isEmpty = false;
+                            var valid = false;
                             $("#Submit").on('click', function () {
                                 isEmpty = false
                                 $('input[type=text]:required').each(function () {
@@ -447,6 +451,8 @@
                                         isEmpty = true;
                                 });
 
+                                
+
                                 function IsEmail(email) {
                                     var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
                                     if (!regex.test(email)) {
@@ -456,20 +462,18 @@
                                     }
                                 }
 
+                                
+
+
+
+
 
                                 if (isEmpty)
                                     NotFull();
                                 else
                                     AcceptReservation();
                             });
-                            /*$('#Submit').on("click", function(){
-                                let valid = true;
-                                $('[required]').each(function() {
-                                if ($(this).is(':invalid') || !$(this).val()) valid = false;
-                                    })
-                                if (!valid) NotFull();
-                                else AcceptReservation();
-                                })*/
+                            
                             function AcceptReservation() {
                                 Swal.fire({
                                     background: "#ffffff",
@@ -488,10 +492,10 @@
                                     confirmButtonColor: "#f5deb3",
                                     backdrop: `hsla(40, 100%, 95%,0.3) `
                                 })
-                                
-                                    
-                                
-                                
+
+
+
+
 
                             }
                             function NotFull() {
@@ -540,37 +544,24 @@
             utilsScript:
                 "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
         });
-    
-        function process(event) {
-            event.preventDefault();
-    
-            const phoneNumber = phoneInput.getNumber();
-    
-            info.style.display = "none";
-            error.style.display = "none";
-    
-            if (phoneInput.isValidNumber()) {
-                const valid = true;
-            } else {
-                const valid = false;
-            }
-        }
-    
+
+
+
         $("input[name='from']").change(function () {
             $("input[name='to']").val($(this).val());
         })
-    
+
         document.getElementById("signin").onchange = function () {
             var input = document.getElementById("signout");
             input.setAttribute("min", this.value);
         }
-    
-    
+
+
         $("#people[type='number']").keypress(function (evt) {
             evt.preventDefault();
         });
-    
-    
+
+
         function CreditCard() {
             Swal.fire({
                 title: "You have selected payment by a card:",
@@ -601,7 +592,7 @@
                 showCancelButton: true,
                 cancelButtonText: 'Cancel',
                 cancelButtonColor: '#d33'
-    
+
             })
                 .then((result) => {
                     if (result.isConfirmed) {
@@ -621,8 +612,8 @@
                     }
                 })
         }
-    
-    
+
+
     </script>
 </body>
 
