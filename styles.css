@@ -35,7 +35,7 @@ div.main {
     height: 920px;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 7px 7px 1px 1px rgb(216, 203, 187);
+    box-shadow: 4px 4px 3px 1px rgb(216, 203, 187);
     border: 1px wheat solid;
 }
 div.header{
